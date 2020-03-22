@@ -32,10 +32,22 @@ function.
   * use ? for query data values, rather than .format() and insert data directly.
   * using .format() is liable to SQL injection attack.
   * the `?` placeholder is only specific to sqlite3 python module
+  * on query string format, add parenthesis, and comma after the last param.
 
 * validation
 * error is reflected by model and controller interactions, not using javascript
 
 * routing mechanism
-  * user url_for to navigate to other routes based on param
+  * user url_for to navigate to other routes based on param, similar to `link_to` in Rails.
   * by convention give a same name to both the view and the function
+
+* `g` vs. session
+  * `g` is persists for the request
+  * session persists per browser
+
+* use `Jinja` to render templates
+  * safe with any input by autoescape
+  * placeholder for content: `{% block content %}{% endblock %}`
+  * g is automatically available in templates, passing parameters between view and controller
+  * To keep things organized, the templates for a blueprint will be placed in a directory with the same name as the blueprint.
+  * `{extends 'base.html'}` overrides block in base template.
