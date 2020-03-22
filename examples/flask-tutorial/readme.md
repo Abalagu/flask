@@ -25,4 +25,17 @@ function.
 1. factory create app in `__init__.py`
 2. enable `init_db` in `db.py` to flask cli
 
+* Blueprint
+  * to organize related views into groups
 
+* db.execute()
+  * use ? for query data values, rather than .format() and insert data directly.
+  * using .format() is liable to SQL injection attack.
+  * the `?` placeholder is only specific to sqlite3 python module
+
+* validation
+* error is reflected by model and controller interactions, not using javascript
+
+* routing mechanism
+  * user url_for to navigate to other routes based on param
+  * by convention give a same name to both the view and the function

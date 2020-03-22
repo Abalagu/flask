@@ -29,6 +29,7 @@ def close_db(e=None):
 def init_db():
     db = get_db()
     # run SQL commands
+    # after init-db command, db is reset to default, one has to re-register.
     with current_app.open_resource('schema.sql') as f:
         db.executescript(f.read().decode('utf8'))
 
